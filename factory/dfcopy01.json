@@ -1,0 +1,9 @@
+{
+	"name": "dfcopy01",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ad4e9d2d-b2b7-408b-a511-ef970171d65e",
+		"tenantId": "b8993f9c-e1d9-4bfe-b8c6-7acc1e194d2f"
+	}
+}
