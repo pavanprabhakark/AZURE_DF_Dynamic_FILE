@@ -525,7 +525,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"items": {
-								"value": "@activity('GM_DELETE_FROM_SRC').output.itemName",
+								"value": "@activity('GM_DELETE_FROM_SRC').output.childItems",
 								"type": "Expression"
 							},
 							"activities": [
