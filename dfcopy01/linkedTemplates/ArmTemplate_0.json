@@ -343,8 +343,8 @@
 								"parameters": {}
 							},
 							"fieldList": [
-								"childItems",
-								"itemName"
+								"itemName",
+								"childItems"
 							],
 							"storeSettings": {
 								"type": "AzureBlobStorageReadSettings",
@@ -546,8 +546,7 @@
 											"type": "DelimitedTextSource",
 											"storeSettings": {
 												"type": "AzureBlobStorageReadSettings",
-												"recursive": true,
-												"wildcardFileName": "*",
+												"fileListPath": "srccon1",
 												"enablePartitionDiscovery": false
 											},
 											"formatSettings": {
