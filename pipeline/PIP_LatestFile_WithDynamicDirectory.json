@@ -137,6 +137,9 @@
 				"type": "String"
 			}
 		},
+		"folder": {
+			"name": "Dynamic File system with Date"
+		},
 		"annotations": [],
 		"lastPublishTime": "2025-08-04T07:40:36Z"
 	},

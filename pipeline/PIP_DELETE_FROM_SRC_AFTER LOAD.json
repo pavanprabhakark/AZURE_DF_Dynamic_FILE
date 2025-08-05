@@ -119,6 +119,9 @@
 				"type": "String"
 			}
 		},
+		"folder": {
+			"name": "PIP SRC to TRG with DELETE in SRC"
+		},
 		"annotations": []
 	}
 }
