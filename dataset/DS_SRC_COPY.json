@@ -1,0 +1,31 @@
+{
+	"name": "DS_SRC_COPY",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LN_srccon1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "srccon1"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Orders[Customer_Name]",
+				"type": "String"
+			},
+			{
+				"name": "[Total Sales Per Customer]",
+				"type": "String"
+			}
+		]
+	}
+}
