@@ -68,8 +68,7 @@
 									"type": "DelimitedTextSource",
 									"storeSettings": {
 										"type": "AzureBlobStorageReadSettings",
-										"recursive": true,
-										"wildcardFileName": "*",
+										"fileListPath": "srccon1",
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
