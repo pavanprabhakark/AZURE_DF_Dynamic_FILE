@@ -252,64 +252,21 @@
 							},
 							"activities": [
 								{
-									"name": "Copy data1",
-									"type": "Copy",
+									"name": "Set variable1",
+									"type": "SetVariable",
 									"dependsOn": [],
 									"policy": {
-										"timeout": "0.12:00:00",
-										"retry": 0,
-										"retryIntervalInSeconds": 30,
 										"secureOutput": false,
 										"secureInput": false
 									},
 									"userProperties": [],
 									"typeProperties": {
-										"source": {
-											"type": "DelimitedTextSource",
-											"storeSettings": {
-												"type": "AzureBlobStorageReadSettings",
-												"fileListPath": "srccon1",
-												"enablePartitionDiscovery": false
-											},
-											"formatSettings": {
-												"type": "DelimitedTextReadSettings"
-											}
-										},
-										"sink": {
-											"type": "DelimitedTextSink",
-											"storeSettings": {
-												"type": "AzureBlobFSWriteSettings"
-											},
-											"formatSettings": {
-												"type": "DelimitedTextWriteSettings",
-												"quoteAllText": true,
-												"fileExtension": ".txt"
-											}
-										},
-										"enableStaging": false,
-										"translator": {
-											"type": "TabularTranslator",
-											"typeConversion": true,
-											"typeConversionSettings": {
-												"allowDataTruncation": true,
-												"treatBooleanAsNumber": false
-											}
+										"variableName": "Testing",
+										"value": {
+											"value": "@item().name",
+											"type": "Expression"
 										}
-									},
-									"inputs": [
-										{
-											"referenceName": "DS_SRC_LATESTDATE01",
-											"type": "DatasetReference",
-											"parameters": {}
-										}
-									],
-									"outputs": [
-										{
-											"referenceName": "DS_TRG_LatestDate",
-											"type": "DatasetReference",
-											"parameters": {}
-										}
-									]
+									}
 								}
 							]
 						}
@@ -318,12 +275,15 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
+				"variables": {
+					"Testing": {
+						"type": "String"
+					}
+				},
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_SRC_LATESTDATE')]",
-				"[concat(variables('factoryId'), '/datasets/DS_SRC_LATESTDATE01')]",
-				"[concat(variables('factoryId'), '/datasets/DS_TRG_LatestDate')]"
+				"[concat(variables('factoryId'), '/datasets/DS_SRC_LATESTDATE')]"
 			]
 		},
 		{
