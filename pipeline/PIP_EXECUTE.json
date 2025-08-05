@@ -1,0 +1,47 @@
+{
+	"name": "PIP_EXECUTE",
+	"properties": {
+		"activities": [
+			{
+				"name": "EXE_PIP_SRC_LOAD",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PIP_DELETE_FROM_SRC_AFTER LOAD",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "EXE_PIP_DELETE",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "EXE_PIP_SRC_LOAD",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PIP_DELETE",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": []
+	}
+}
