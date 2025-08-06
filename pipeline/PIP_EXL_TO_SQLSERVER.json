@@ -33,8 +33,8 @@
 				}
 			},
 			{
-				"name": "FE_BLOB_TO_SQLSERVER",
-				"type": "ForEach",
+				"name": "Set variable1",
+				"type": "SetVariable",
 				"dependsOn": [
 					{
 						"activity": "GM_BLOB_TO_SQLSERVER",
@@ -43,31 +43,17 @@
 						]
 					}
 				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
 				"userProperties": [],
 				"typeProperties": {
-					"items": {
+					"variableName": "Checking",
+					"value": {
 						"value": "@activity('GM_BLOB_TO_SQLSERVER').output.itemName",
 						"type": "Expression"
-					},
-					"activities": [
-						{
-							"name": "Set variable1",
-							"type": "SetVariable",
-							"dependsOn": [],
-							"policy": {
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"variableName": "Checking",
-								"value": {
-									"value": "@item().name",
-									"type": "Expression"
-								}
-							}
-						}
-					]
+					}
 				}
 			}
 		],
