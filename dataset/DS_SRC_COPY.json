@@ -10,7 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "06082025",
+				"folderPath": {
+					"value": "@formatDateTime(utcNow(),'ddMMyyyy')",
+					"type": "Expression"
+				},
 				"container": "srccon1"
 			},
 			"columnDelimiter": ",",
