@@ -50,42 +50,31 @@
 					},
 					"activities": [
 						{
-							"name": "COPY_BLOB_TO_SQLSERVER",
-							"type": "Copy",
+							"name": "Set variable1",
+							"type": "SetVariable",
 							"dependsOn": [],
 							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
 								"secureOutput": false,
 								"secureInput": false
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"source": {
-									"type": "DelimitedTextSource",
-									"storeSettings": {
-										"type": "AzureBlobStorageReadSettings",
-										"recursive": true,
-										"enablePartitionDiscovery": false
-									},
-									"formatSettings": {
-										"type": "DelimitedTextReadSettings"
-									}
-								},
-								"enableStaging": false
-							},
-							"inputs": [
-								{
-									"referenceName": "DS_SRC_COPY",
-									"type": "DatasetReference"
+								"variableName": "Checking",
+								"value": {
+									"value": "@item().name",
+									"type": "Expression"
 								}
-							]
+							}
 						}
 					]
 				}
 			}
 		],
+		"variables": {
+			"Checking": {
+				"type": "String"
+			}
+		},
 		"folder": {
 			"name": "PIP EXCEL TO SQLSERVER"
 		},
