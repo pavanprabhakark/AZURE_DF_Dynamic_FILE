@@ -20,7 +20,6 @@
 						"type": "DatasetReference"
 					},
 					"fieldList": [
-						"childItems",
 						"itemName"
 					],
 					"storeSettings": {
@@ -47,7 +46,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('GM_BLOB_TO_SQLSERVER').output.childItems",
+						"value": "@activity('GM_BLOB_TO_SQLSERVER').output.itemName",
 						"type": "Expression"
 					},
 					"activities": [
