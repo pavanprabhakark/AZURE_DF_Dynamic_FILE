@@ -5,11 +5,20 @@
 			"referenceName": "LN_srccon1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"SourceFile": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().SourceFile",
+					"type": "Expression"
+				},
 				"folderPath": {
 					"value": "@formatDateTime(utcNow(),'ddMMyyyy')",
 					"type": "Expression"
