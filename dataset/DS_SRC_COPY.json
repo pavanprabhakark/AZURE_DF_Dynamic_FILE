@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "customers-10000.csv",
 				"folderPath": "06082025",
 				"container": "srccon1"
 			},
