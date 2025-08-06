@@ -52,7 +52,7 @@
 				"typeProperties": {
 					"variableName": "Checking",
 					"value": {
-						"value": "@activity('GM_BLOB_TO_SQLSERVER').output.itemName",
+						"value": "@activity('GM_BLOB_TO_SQLSERVER').output.childItems",
 						"type": "Expression"
 					}
 				}
