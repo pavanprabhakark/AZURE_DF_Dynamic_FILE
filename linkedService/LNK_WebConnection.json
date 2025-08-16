@@ -1,0 +1,12 @@
+{
+	"name": "LNK_WebConnection",
+	"properties": {
+		"annotations": [],
+		"type": "WebConnection",
+		"typeProperties": {
+			"url": "https://www.kaggle.com/datasets/sumedh1507/bmw-car-sales-dataset",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
